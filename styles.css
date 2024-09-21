@@ -1,0 +1,148 @@
+
+body {
+    font-family: "Chakra Petch", sans-serif;
+    background-color: rgb(83, 52, 52);
+    color: white;
+}
+.header {
+    background-color: rgba(255, 255, 255, 0.473); 
+    text-align: center;
+    padding: 15px;
+    border-style:solid;
+    border-color: aliceblue;
+ }
+.imagenPagina {
+    width: 90%;
+    border-style: solid;
+    border-color: aliceblue;
+    border-radius: 10px;
+}
+.boton img{
+    align-items: center;
+    width: 3em;
+}
+.box1 img {
+    width: 40%;
+    border-radius: 50%;
+}
+.container {
+    border-style:solid;
+    margin: 0 auto;
+    border-color: aliceblue;
+    padding: 20px;
+    background-color: rgba(3, 3, 3, 0.685);
+    grid-template-areas: 
+    "box1 box2";
+    grid-template-columns: 1fr 1fr; 
+}
+/*Defino las areas de los sub containers*/
+.box1 {
+    grid-area: box1;
+}
+.box2 {
+    grid-area: box2;
+    font-size: x-large;
+}
+.box1, .box2 { 
+    text-align: center;
+}
+
+.separador {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-areas: 
+    "titulo";
+    grid-template-rows: 1fr; 
+    }
+.separadorTitulo {
+    grid-area: titulo;
+    text-align: center;
+}
+/*Defino los container con formato grid*/
+.container, .container2, .container3 {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 10px;
+    grid-auto-flow: row dense; 
+}
+.container2 {
+        grid-template-areas:
+        "box3 box4 box5";
+        grid-template-columns: 1fr 1fr 1fr; 
+        grid-template-rows: 1fr;
+    }
+/*Defino las areas de los sub containers*/
+.box3 { 
+    grid-area: box3;
+}    
+.box4 { 
+    grid-area: box4;
+}
+.box5 {
+        grid-area: box5;
+}
+.box6 {
+    grid-area:box6;
+}
+.box7 {
+    grid-area:box7;
+}
+.box3, .box4, .box5, .box6, .box7 {
+    background-color:crimson;
+    border-style: dashed;
+    border-color: aliceblue;
+    padding: 10px;
+    text-align: center;
+    align-items: center;
+    justify-items: center; 
+    transition: all 0.3s ease;
+    opacity: 0.5;
+}
+/*Defino un hover para los subconteiners*/
+.box3:hover, .box4:hover, .box5:hover, .box6:hover, .box7:hover {
+    transform: scale(1.01);
+    opacity: 1;
+}
+.container3 {
+    margin: 0 auto;
+    width: 50%;
+    grid-template-areas:
+    "box6 box7";
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr;
+}
+.footer {
+    background-color: rgba(0, 0, 0, 0.534); 
+    padding: 10px;
+    margin-top: 10px;
+    border-style:solid;
+    border-color: aliceblue;
+}
+/*Agrego media queries para dispositivos con pantallas de un maximo de 900px,
+en ellos se vera el grid en forma de columna*/
+@media (max-width:900px) {
+    .container {
+        grid-template-columns: 1fr; 
+    grid-template-rows: 1fr 1fr; 
+        grid-template-areas: 
+    "box1" 
+    "box2";
+    }
+    .container2 {
+        grid-template-columns: 1fr; 
+        grid-template-rows: 1fr 1fr 1fr; 
+            grid-template-areas:
+        "box3" 
+        "box4"
+        "box5";
+    }
+    .container3 {
+        grid-template-columns: 1fr; 
+        grid-template-rows: 1fr 1fr;
+        width: 100%;
+            grid-template-areas:
+        "box6" 
+        "box7";
+    }
+}
+
