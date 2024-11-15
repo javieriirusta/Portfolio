@@ -59,7 +59,7 @@ body {
     text-align: center;
 }
 /*Defino los container con formato grid*/
-.container, .container2, .container3 {
+.container, .container2, .container3, .container4 {
     display: grid;
     gap: 10px;
     margin-bottom: 10px;
@@ -79,7 +79,7 @@ body {
     grid-area: box4;
 }
 .box5 {
-        grid-area: box5;
+    grid-area: box5;
 }
 .box6 {
     grid-area:box6;
@@ -87,7 +87,16 @@ body {
 .box7 {
     grid-area:box7;
 }
-.box3, .box4, .box5, .box6, .box7 {
+.box8 {
+    grid-area:box8;
+}
+.box9 {
+    grid-area:box9;
+}
+.box10 {
+    grid-area:box10;
+}
+.box3, .box4, .box5, .box6, .box7, .box8, .box9, .box10 {
     background-color:crimson;
     border-style: dashed;
     border-color: aliceblue;
@@ -99,15 +108,23 @@ body {
     opacity: 0.5;
 }
 /*Defino un hover para los subconteiners*/
-.box3:hover, .box4:hover, .box5:hover, .box6:hover, .box7:hover {
+.box3:hover, .box4:hover, .box5:hover, .box6:hover, .box7:hover, .box8:hover, .box9:hover, .box10:hover {
     transform: scale(1.01);
     opacity: 1;
 }
 .container3 {
     margin: 0 auto;
+    width: 100%;
+    grid-template-areas:
+    "box6 box7 box8";
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 1fr;
+}
+.container4 {
+    margin: 10px auto auto auto;
     width: 50%;
     grid-template-areas:
-    "box6 box7";
+    "box9 box10";
     grid-template-columns: 1fr 1fr; 
     grid-template-rows: 1fr;
 }
@@ -138,11 +155,21 @@ en ellos se vera el grid en forma de columna*/
     }
     .container3 {
         grid-template-columns: 1fr; 
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
         width: 100%;
             grid-template-areas:
         "box6" 
-        "box7";
+        "box7"
+        "box8";
+    }
+    .container4 {
+        margin: 10px auto auto auto;
+        width: 100%;
+        grid-template-areas:
+        "box9"
+        "box10";
+        grid-template-columns: 1fr; 
+        grid-template-rows: 1fr 1fr;
     }
 }
 
